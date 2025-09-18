@@ -1,6 +1,6 @@
 import 'package:supabase_flutter/supabase_flutter.dart';
 
-abstract interface class AuthRemote {
+abstract interface class AuthRemoteDataSource {
   Future<String> signUpWithEmailPassword({
     required String name,
     required String email,
@@ -12,9 +12,12 @@ abstract interface class AuthRemote {
   });
 }
 
-class AuthRemoteImpl implements AuthRemote {
+class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
   final SupabaseClient supabaseClient;
-  AuthRemoteImpl({required this.supabaseClient});
+
+  // Fixed: Single positional parameter, no unused 'client'
+  AuthRemoteDataSourceImpl(this.supabaseClient);
+
   @override
   Future<String> loginWithEmailPassword({
     required String email,

@@ -50,9 +50,10 @@ class _LoginPageState extends State<LoginPage> {
                   controller: passwordController,
                   isPasswordText: true,
                 ),
-                const SizedBox(height: 25.0),
+                SizedBox(height: 25.0),
                 AuthGradientButton(
                   buttonText: 'Sign In',
+                  onPressed: () {},
                 ), // Fixed: Changed to 'Sign In'
                 const SizedBox(height: 20.0),
                 GestureDetector(
